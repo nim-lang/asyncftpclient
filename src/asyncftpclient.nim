@@ -5,7 +5,8 @@
 #    See the file "copying.txt", included in this
 #    distribution, for details about the copyright.
 #
-
+## .. note:: In order to use this module, run `nimble install asyncftpclient`.
+##
 ## This module implements an asynchronous FTP client. It allows you to connect
 ## to an FTP server and perform operations on it such as for example:
 ##
@@ -22,7 +23,8 @@
 ## connect to an FTP server. You can do so with the `connect` procedure.
 ##
 ##   ```Nim
-##   import std/[asyncdispatch, asyncftpclient]
+##   import std/asyncdispatch
+##   import pkg/asyncftpclient
 ##   proc main() {.async.} =
 ##     var ftp = newAsyncFtpClient("example.com", user = "test", pass = "test")
 ##     await ftp.connect()
@@ -43,7 +45,8 @@
 ## instead specify an absolute path.
 ##
 ##   ```Nim
-##   import std/[asyncdispatch, asyncftpclient]
+##   import std/asyncdispatch
+##   import pkg/asyncftpclient
 ##   proc main() {.async.} =
 ##     var ftp = newAsyncFtpClient("example.com", user = "test", pass = "test")
 ##     await ftp.connect()
@@ -65,7 +68,8 @@
 ## `progressInterval` milliseconds.
 ##
 ##   ```Nim
-##   import std/[asyncdispatch, asyncftpclient]
+##   import std/asyncdispatch
+##   import pkg/asyncftpclient
 ##
 ##   proc onProgressChanged(total, progress: BiggestInt,
 ##                           speed: float) {.async.} =
